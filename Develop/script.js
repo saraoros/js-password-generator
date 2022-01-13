@@ -3,6 +3,8 @@
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
+
+// Start of window alerts and window prompts
 window.alert(
   "Welcome to our password generator! We're excited to help you create a safe password. Please answer the following prompts to help us create the perfect password for you."
 );
@@ -26,6 +28,8 @@ var getSymbols = window.prompt(
 var getNumbers = window.prompt(
   "Would you like your password to contain numbers? Type 'YES' or 'NO' in the box below."
 );
+// End of window alerts and window prompts
+
 
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -41,6 +45,8 @@ console.log(allChars);
 
 console.log(getLength, getUpperCase, getLowerCase, getSymbols, getNumbers);
 
+
+
 if (getLength < 8 || getLength > 128 || !getLength || isNaN(getLength)) {
   alert("Invalid entry");
 } else {
@@ -50,17 +56,17 @@ if (getLength < 8 || getLength > 128 || !getLength || isNaN(getLength)) {
   getSymbolsFn();
   getNumbersFn();
   console.log(allChars);
-  // I added this last part in hopes of it working
-  generatePassword();
 }
 
+
 for (var i = 0; i < getLength; i++) {
-  //math floor math random, mutiply to all Chars
   //return String.fromCharCode(Math.floor(Math.random() * 26) + 65); 'illegal return statement'
   //return Math.floor.random() * allChars; 'illegal return statement'
   //return String.fromCharCode(Math.floor(Math.random() * 26) + 97); 'illegal return statement'
-
-
+  
+  
+  Math.floor(Math.random() * allChars) + 1;
+  //math floor math random, mutiply to all Chars
   //If math random cannot be applied to a string, then turn that string to array by using a split method
 }
 
@@ -75,6 +81,7 @@ function getUpperCaseFn() {
 function getLowerCaseFn() {
   if (getLowerCase.toUpperCase === "YES") {
     allChars += lowerCase;
+    //return symbols[Math.floor(Math.random() * lowerCase.length)];
   }
   //return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
@@ -82,20 +89,23 @@ function getLowerCaseFn() {
 function getSymbolsFn() {
   if (getSymbols === "YES" || getSymbols === "yes") {
     allChars += symbols;
+    //return symbols[Math.floor(Math.random() * symbols.length)];
   }
-  //return symbols[Math.floor(Math.random() * symbols.length)];
+  
 }
 
 function getNumbersFn() {
   if (getNumbers === "YES" || getNumbers === "yes") {
     allChars += numberChar;
+    //return +numberChar[(Math.floor(Math.random() * 10) + 48)];
   }
-  //return +String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+  
 }
 
 function getLengthFn() {}
 
 //bottom of JS?
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -103,6 +113,9 @@ function writePassword() {
 
   passwordText.value = password;
 }
+
+
+
 
 function generatePassword() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
