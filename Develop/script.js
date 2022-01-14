@@ -59,13 +59,17 @@ if (getLength < 8 || getLength > 128 || !getLength || isNaN(getLength)) {
 }
 
 
+
 for (var i = 0; i < getLength; i++) {
   //return String.fromCharCode(Math.floor(Math.random() * 26) + 65); 'illegal return statement'
   //return Math.floor.random() * allChars; 'illegal return statement'
   //return String.fromCharCode(Math.floor(Math.random() * 26) + 97); 'illegal return statement'
-  
-  
-  Math.floor(Math.random() * allChars) + 1;
+  //Math.floor(Math.random() * 128 + 1);
+  //Math.floor(Math.random() * 'allChars');
+  //Math.floor(Math.random() * 'getLength');
+  //return Math.floor(Math.random() * (128 - 8) + 8);  'illegal return statement'
+  //(getLength, getUpperCase, getLowerCase, getSymbols, getNumbers);
+
   //math floor math random, mutiply to all Chars
   //If math random cannot be applied to a string, then turn that string to array by using a split method
 }
@@ -73,13 +77,13 @@ for (var i = 0; i < getLength; i++) {
 
 // Start of functions
 function getUpperCaseFn() {
-  if (getUpperCase.toUpperCase() === "YES") {
+  if (getUpperCase.toUpperCase() === "YES" /* || getUpperCase() === "yes" */) {
     allChars += upperCase;
   }
 }
 
 function getLowerCaseFn() {
-  if (getLowerCase.toUpperCase === "YES") {
+  if (getLowerCase === "YES" || getLowerCase === "yes") {
     allChars += lowerCase;
     //return symbols[Math.floor(Math.random() * lowerCase.length)];
   }
