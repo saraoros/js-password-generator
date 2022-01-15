@@ -8,10 +8,6 @@ window.alert(
   "Welcome to our Password Generator! We're excited to help you create a safe password. Please answer the following prompts to help us create the perfect password for you."
 );
 
-/* var getLength = window.prompt(
-  "How long would you like your password to be? Choose a number between 8-128 and type the desired length in the box below."
-); */
-
 var getLength = parseInt(
   prompt(
     "How long would you like your password to be? Choose a number between 8-128 and type the desired length in the box below."
@@ -48,6 +44,8 @@ var symbols = "!@#$%^&*(){}[]=<>/,.";
 
 var allChars = "";
 
+var userInput = [];
+
 console.log(allChars);
 
 console.log(getLength, getUpperCase, getLowerCase, getSymbols, getNumbers);
@@ -63,28 +61,20 @@ if (getLength < 8 || getLength > 128 || !getLength || isNaN(getLength)) {
   console.log(allChars);
 }
 
+var password = "";
+
 for (var i = 0; i < getLength; i++) {
-  //return String.fromCharCode(Math.floor(Math.random() * 26) + 65); 'illegal return statement'
-  //return Math.floor.random() * allChars; 'illegal return statement'
-  //return String.fromCharCode(Math.floor(Math.random() * 26) + 97); 'illegal return statement'
-  //Math.floor(Math.random() * 128 + 1);
-  //Math.floor(Math.random() * 'allChars');
-  //Math.floor(Math.random() * 'getLength');
-  //return Math.floor(Math.random() * (128 - 8) + 8);  'illegal return statement'
-  //(getLength, getUpperCase, getLowerCase, getSymbols, getNumbers);
-  //console.log(getLength);
-  // Math.floor(Math.random(getLength) * allChars[getLengthFn]); When I do 'getLength' in square brackets, then the
-  //generate button does not work.
-  // allChars = Math.floor(Math.random() * getLength) +1;
-  // console.log(allChars);
-  // Tutors Notes:
-  //math floor math random, mutiply to all Chars
-  //If math random cannot be applied to a string, then turn that string to array by using a split method
+  var index = Math.floor(Math.random() * allChars.length);
+  var char = allChars.charAt(index);
+  password += char;
+
 }
+writePassword();
+console.log(password);
 
 // Start of functions
 function getUpperCaseFn() {
-  if (getUpperCase.toUpperCase() === "YES" /* || getUpperCase() === "yes" */) {
+  if (getUpperCase.toUpperCase() === "YES") {
     allChars += upperCase;
   }
 }
@@ -113,8 +103,6 @@ function getNumbersFn() {
 
 function getLengthFn() {}
 
-//bottom of JS?
-
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -131,5 +119,3 @@ function generatePassword() {
 generateBtn.addEventListener("click", writePassword);
 {
 }
-
-// End of bottom JS??
