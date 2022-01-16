@@ -34,6 +34,7 @@ var getNumbers = window.prompt(
 );
 // End of window alerts and window prompts
 
+// Assigned vars
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 var lowerCase = "abcdefghijklmnopqrstuvwxyz";
@@ -47,7 +48,6 @@ var allChars = "";
 var userInput = [];
 
 console.log(allChars);
-
 console.log(getLength, getUpperCase, getLowerCase, getSymbols, getNumbers);
 
 if (getLength < 8 || getLength > 128 || !getLength || isNaN(getLength)) {
@@ -58,11 +58,13 @@ if (getLength < 8 || getLength > 128 || !getLength || isNaN(getLength)) {
   getLowerCaseFn();
   getSymbolsFn();
   getNumbersFn();
+  writePassword();
   console.log(allChars);
 }
 
 var password = "";
 
+// for loop
 for (var i = 0; i < getLength; i++) {
   var index = Math.floor(Math.random() * allChars.length);
   var char = allChars.charAt(index);
@@ -76,25 +78,28 @@ console.log(password);
 function getUpperCaseFn() {
   if (getUpperCase.toUpperCase() === "YES") {
     allChars += upperCase;
+    return allChars[Math.floor(Math.random() * upperCase.length)];
   }
 }
 
 function getLowerCaseFn() {
   if (getLowerCase === "YES" || getLowerCase === "yes") {
     allChars += lowerCase;
-    return symbols[Math.floor(Math.random() * lowerCase.length)];
+    return allChars[Math.floor(Math.random() * lowerCase.length)];
   }
 }
 
 function getSymbolsFn() {
   if (getSymbols === "YES" || getSymbols === "yes") {
     allChars += symbols;
+    return allChars[Math.floor(Math.random() * symbols.length)];
   }
 }
 
 function getNumbersFn() {
   if (getNumbers === "YES" || getNumbers === "yes") {
     allChars += numberChar;
+    return allChars[Math.floor(Math.random() * numberChar.length)];
   }
 }
 
@@ -104,13 +109,17 @@ function getLengthFn() {}
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 }
+
+writePassword();
 
 function generatePassword() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
+generatePassword();
+
+// End of functions
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
