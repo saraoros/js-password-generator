@@ -67,9 +67,9 @@ for (var i = 0; i < getLength; i++) {
   var index = Math.floor(Math.random() * allChars.length);
   var char = allChars.charAt(index);
   password += char;
-
 }
-writePassword();
+
+generatePassword(generateBtn);
 console.log(password);
 
 // Start of functions
@@ -82,22 +82,19 @@ function getUpperCaseFn() {
 function getLowerCaseFn() {
   if (getLowerCase === "YES" || getLowerCase === "yes") {
     allChars += lowerCase;
-    //return symbols[Math.floor(Math.random() * lowerCase.length)];
+    return symbols[Math.floor(Math.random() * lowerCase.length)];
   }
-  //return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
 
 function getSymbolsFn() {
   if (getSymbols === "YES" || getSymbols === "yes") {
     allChars += symbols;
-    //return symbols[Math.floor(Math.random() * symbols.length)];
   }
 }
 
 function getNumbersFn() {
   if (getNumbers === "YES" || getNumbers === "yes") {
     allChars += numberChar;
-    //return +numberChar[(Math.floor(Math.random() * 10) + 48)];
   }
 }
 

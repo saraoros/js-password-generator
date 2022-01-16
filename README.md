@@ -18,6 +18,6 @@ This projects' goal is to help someone create a new and secure password. The pas
 ### Website's URL:
 
 - Get your secure password here: https://github.com/saraoros/js-password-generator.git
-<br />
   <br />
-  <img src="./develop/pass-gen-ss.png" />
+  <br />
+  <img src="./Develop/pass-gen-ss.png" />
