@@ -15,9 +15,9 @@ This projects' goal is to help someone create a new and secure password. The pas
 - Once all prompts are answered, a password is generated that matches the selected criteria.
 - Lastly, when the password is generated, the password is either displayed in an alert or written to the page.
 
-### Website's URL:
+### Website's URL: https://saraoros.github.io/js-password-generator/
 
-- Get your secure password here: https://github.com/saraoros/js-password-generator.git
+- Get your secure password here:
   <br />
   <br />
   <img src="./Develop/pass-gen-ss.png" />
