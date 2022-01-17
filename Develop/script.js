@@ -1,5 +1,3 @@
-// Assignment code here
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -45,7 +43,8 @@ var symbols = "!@#$%^&*(){}[]=<>/,.";
 
 var allChars = "";
 
-var userInput = [];
+var password = "";
+
 
 console.log(allChars);
 console.log(getLength, getUpperCase, getLowerCase, getSymbols, getNumbers);
@@ -59,19 +58,17 @@ if (getLength < 8 || getLength > 128 || !getLength || isNaN(getLength)) {
   getSymbolsFn();
   getNumbersFn();
   writePassword();
-  console.log(allChars);
+  console.log(password);
 }
 
-var password = "";
-
 // for loop
-for (var i = 0; i < getLength; i++) {
+for (var i = 0; i <= getLength; i++) {
+  console.log(password);
   var index = Math.floor(Math.random() * allChars.length);
   var char = allChars.charAt(index);
   password += char;
 }
 
-generatePassword(generateBtn);
 console.log(password);
 
 // Start of functions
@@ -107,21 +104,13 @@ function getLengthFn() {}
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+ var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
 
-writePassword();
-
-function generatePassword() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
-generatePassword();
-
 // End of functions
 
-// Add event listener to generate button
+// Makes "Generate Button" active
 generateBtn.addEventListener("click", writePassword);
 {
 }
