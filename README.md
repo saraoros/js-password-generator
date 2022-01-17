@@ -17,7 +17,6 @@ This projects' goal is to help someone create a new and secure password. The pas
 
 ### Website's URL: https://saraoros.github.io/js-password-generator/
 
-- Get your secure password here:
   <br />
   <br />
   <img src="./Develop/pass-gen-ss.png" />
